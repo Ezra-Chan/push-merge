@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+"use strict";
+process.env.NODE_PATH = __dirname + "/../node_modules/";
+
+const program = require("commander");
+// if (!program.args.length) {
+//   require("../lib/push-merge")();
+//   return;
+// }
+program
+  .version(require("../package.json").version, "-V, -v, --version")
+  .usage("<command> [options]");
+program
+  .command("s")
+  .description("推送代码")
+  .action(() => {
+    require("../lib/push-head")();
+  });
+program
+  .command("m")
+  .description("推送代码并发起合并请求")
+  .action(() => {
+    require("../lib/push-merge")();
+  });
+program
+  .command("config")
+  .description("配置信息")
+  .alias("c")
+  .action(() => {
+    require("../lib/config")();
+  });
+program.parse(process.argv);

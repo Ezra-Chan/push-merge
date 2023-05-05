@@ -1,0 +1,19 @@
+
+/node_modules
+
+/coverage
+/logs/*.log
+/images/*.png
+test-report.html
+/reports/jest-html-reporters-attach
+/reports/*.html
+
+# package-lock.json
+# pnpm-lock.yaml
+# yarn.lock
+# *.png
+.DS_Store
+/branch.js
+/config.json
+
+

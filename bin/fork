@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+"use strict";
+process.env.NODE_PATH = __dirname + "/../node_modules/";
+
+const program = require("commander");
+
+program
+  .version(require("../package.json").version, "-V, -v, --version")
+  .usage("<command> [options]");
+program
+  .command("pull")
+  .description("获取分支最新代码")
+  .alias("l")
+  .action(() => {
+    require("../lib/pull")();
+  });
+program.parse(process.argv);
+
+if (!program.args.length) {
+  program.help();
+}
