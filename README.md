@@ -39,10 +39,10 @@ pf
 ### 推送代码并发起合并请求
 1. 切换到对应分支，如V8R4C110
 2. 写代码
-3. git add .
-4. git commit -m "for example"
-5. git pull
-6. pm
+3. `git add .`
+4. `git commit -m "for example"`
+5. `git pull`
+6. `pm`
 
 ### 同步二开仓库
 1. fork一个自己的二开仓库
