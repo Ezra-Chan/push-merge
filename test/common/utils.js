@@ -1,5 +1,3 @@
-import dayjs from "dayjs";
-
 export const replacePage = async ({ browser, globalConfig, url }) => {
   const { baseUrl } = globalConfig;
   const target = await browser.waitForTarget(t =>
@@ -86,8 +84,8 @@ export const checkResult = async params => {
   if (condition) {
     console.info(`${name}: pass!`);
   } else {
-    const time = dayjs().valueOf();
-    const imageName = `./images/${name}${time}.png`;
+    const time = new Date();
+    const imageName = `./images/${name}${time.valueOf()}.png`;
     await page.screenshot({ path: imageName });
     console.info(`${name}: failed! 截图${imageName}`);
   }
@@ -149,4 +147,25 @@ export const getDomXY = async ({ page, key }) => {
 //控制鼠标移动
 export const moveMouse = async (page, x, y) => {
   await page.mouse.move(x, y);
+};
+
+export const checkUrlResult = async ({ page, url, message }) => {
+  try {
+    await page.waitForResponse(async res => {
+      const resUrl = res.url();
+      if (resUrl.indexOf(url) > -1) {
+        const json = await res.json();
+        const status = json.status || 0;
+        await checkResult({
+          condition: status === 200,
+          name: message || "请求成功",
+          page: page,
+        });
+        expect(status).toEqual(200);
+        return resUrl;
+      }
+    });
+  } catch (e) {
+    //console.log(e)
+  }
 };

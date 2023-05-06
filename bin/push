@@ -3,10 +3,10 @@
 process.env.NODE_PATH = __dirname + "/../node_modules/";
 
 const program = require("commander");
-// if (!program.args.length) {
-//   require("../lib/push-merge")();
-//   return;
-// }
+if (!process.argv.slice(2).length) {
+  require("../lib/push-merge")();
+  return;
+}
 program
   .version(require("../package.json").version, "-V, -v, --version")
   .usage("<command> [options]");

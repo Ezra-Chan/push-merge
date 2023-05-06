@@ -39,9 +39,6 @@ devDependencies:
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
-  dayjs:
-    specifier: ^1.11.5
-    version: 1.11.5
   expect-puppeteer:
     specifier: ^6.1.1
     version: 6.1.1
@@ -2091,10 +2088,6 @@ packages:
     dependencies:
       find-pkg: 0.1.2
       fs-exists-sync: 0.1.0
-    dev: true
-
-  /dayjs@1.11.5:
-    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==}
     dev: true
 
   /debug@4.3.4:

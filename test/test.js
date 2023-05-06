@@ -17,7 +17,6 @@ const globalConfig = {
 };
 
 beforeAll(async () => {
-  console.info("JEST START!");
   browser = await puppeteer.launch({
     headless: process.env.NODE_ENV === "production", // true 不打开浏览器 false 打开浏览器,
     args: ["--no-sandbox"],

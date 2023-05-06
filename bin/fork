@@ -4,6 +4,10 @@ process.env.NODE_PATH = __dirname + "/../node_modules/";
 
 const program = require("commander");
 
+if (!process.argv.slice(2).length) {
+  require("../lib/pull")();
+  return;
+}
 program
   .version(require("../package.json").version, "-V, -v, --version")
   .usage("<command> [options]");
@@ -15,7 +19,3 @@ program
     require("../lib/pull")();
   });
 program.parse(process.argv);
-
-if (!program.args.length) {
-  program.help();
-}
