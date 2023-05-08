@@ -1,6 +1,6 @@
 {
   "name": "push-merge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "推送代码到自己的分支，并发起Merge Request",
   "main": "dist/index.js",
   "bin": {
