@@ -1,3 +1,4 @@
-import mergeTests from "./merge"; //数据连接器
+import mergeTests from "./merge"; // onemind
+import mergeSecondaryTests from "./mergeSecondary";
 
-export default [mergeTests];
+export default { onemind: [mergeTests], secondary: [mergeSecondaryTests] };

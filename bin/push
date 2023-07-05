@@ -23,6 +23,18 @@ program
     require("../lib/push-merge")();
   });
 program
+  .command("u")
+  .description("推送二开代码")
+  .action(() => {
+    require("../lib/push-upstream")();
+  });
+program
+  .command("um")
+  .description("推送二开代码并发起合并请求")
+  .action(() => {
+    require("../lib/push-upstream")(true);
+  });
+program
   .command("config")
   .description("配置信息")
   .alias("c")

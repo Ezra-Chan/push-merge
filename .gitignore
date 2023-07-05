@@ -15,5 +15,6 @@ test-report.html
 .DS_Store
 /branch.js
 /config.json
+/type.js
 
 

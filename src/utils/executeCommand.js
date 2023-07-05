@@ -13,6 +13,9 @@ async function executeCommand(
     const child = execa.execaCommand(command, { cwd });
     if (returnValue) {
       getStream(child.stdout).then(value => {
+        if (command.startsWith("git pull") || command.startsWith("git push")) {
+          console.log("\n", value);
+        }
         callback && callback();
         resolve(value);
       });

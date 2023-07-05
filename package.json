@@ -4,7 +4,7 @@
   "description": "推送代码到自己的分支，并发起Merge Request",
   "main": "dist/index.js",
   "bin": {
-    "pf": "bin/fork",
+    "pf": "bin/pull",
     "pm": "bin/push"
   },
   "scripts": {

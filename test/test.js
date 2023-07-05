@@ -3,6 +3,7 @@ import { BASE_URL } from "./common/constant";
 import { appLogin } from "./common/login";
 import testLists from "./tests";
 import { branch } from "../branch";
+import { type } from "../type";
 // import config from "../config.json";
 const config = require("../config.json");
 
@@ -30,8 +31,8 @@ beforeAll(async () => {
   await appLogin({ globalConfig, page, browser });
 }, 20000);
 
-for (let index = 0; index < testLists.length; index++) {
-  const item = testLists[index];
+for (let index = 0; index < testLists[type].length; index++) {
+  const item = testLists[type][index];
   const tests = item.tests || [];
   const total = tests.length;
   describe(item.name, () => {
